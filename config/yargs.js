@@ -1,3 +1,4 @@
+const {color} =  require('./colors')
 const argv = require('yargs')
                 .option('b', {
                     alias:'base',
@@ -19,9 +20,9 @@ const argv = require('yargs')
                 })
                 .check((argv, options) => {
                     if (isNaN(argv.b)) {
-                        throw 'base need to be a number'
+                        throw 'base need to be a number'.error
                     } else if (isNaN(argv.r)){
-                        throw 'range need should be a number'
+                        throw 'range need should be a number'.error
                     }
                     return true
                 })
